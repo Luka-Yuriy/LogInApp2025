@@ -16,13 +16,25 @@ class LogInViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(userName!)
+        
         welcomeMessageLabel.text = "Welcome \(userName ?? "")"
         helloLabel.text = "👋"
-    }
-    
-    @IBAction func logOutButtonTapped() {
- 
+        setGradienBackgraund()
+
 
     }
+
+
+    private func setGradienBackgraund() {
+        let gradientLayer = CAGradientLayer()
+        
+        gradientLayer.colors = [UIColor.blue.cgColor, UIColor.red.cgColor]
+        gradientLayer.locations = [0.3, 0.7, 0.8]
+        gradientLayer.startPoint = CGPoint(x: 0.0, y: 0.0)
+        gradientLayer.endPoint = CGPoint(x: 0.0, y: 1.0)
+        gradientLayer.frame = view.frame
+        view.layer.insertSublayer(gradientLayer, at: 0)
+       }
 }
+    
+

@@ -25,12 +25,12 @@
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="User Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nmI-F2-nLQ">
                                                 <rect key="frame" x="0.0" y="0.0" width="327" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="w4Q-CV-Yz6">
                                                 <rect key="frame" x="0.0" y="50" width="327" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                                             </textField>
                                         </subviews>
                                     </stackView>
@@ -40,8 +40,8 @@
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="Log In"/>
                                         <connections>
-                                            <action selector="logInButtonTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="llS-KO-p5Y"/>
-                                            <segue destination="oOq-6b-ya3" kind="show" id="A3W-Zg-hzZ"/>
+                                            <action selector="logInButtonTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="ewD-R0-fcJ"/>
+                                            <segue destination="oOq-6b-ya3" kind="show" identifier="segueToLogInVC" id="kt5-DN-ply"/>
                                         </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="55" translatesAutoresizingMaskIntoConstraints="NO" id="PSe-8Z-krd">
@@ -79,8 +79,8 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="passwordTF" destination="w4Q-CV-Yz6" id="uxz-fA-EDx"/>
                         <outlet property="userNameTF" destination="nmI-F2-nLQ" id="AkY-7k-59n"/>
+                        <outlet property="userPasswordTF" destination="w4Q-CV-Yz6" id="uxz-fA-EDx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -124,7 +124,7 @@
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Log out"/>
                                 <connections>
-                                    <action selector="logOutButtonTapped" destination="oOq-6b-ya3" eventType="touchUpInside" id="Uer-lF-vjB"/>
+                                    <segue destination="gTq-aN-ghD" kind="unwind" unwindAction="unwineFor:" id="VJw-ug-XUh"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -146,6 +146,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rj1-Zg-g1v" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="gTq-aN-ghD" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="821" y="4"/>
         </scene>
