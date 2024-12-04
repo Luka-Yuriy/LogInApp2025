@@ -12,14 +12,17 @@ class LogInViewController: UIViewController {
     @IBOutlet var welcomeMessageLabel: UILabel!
     @IBOutlet var helloLabel: UILabel!
     
-    let userName: String! = nil
+    var userName: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(userName!)
+        welcomeMessageLabel.text = "Welcome \(userName ?? "")"
         helloLabel.text = "👋"
     }
     
     @IBAction func logOutButtonTapped() {
-        
+ 
+
     }
 }

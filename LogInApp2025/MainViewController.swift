@@ -21,6 +21,12 @@ class MainViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let logInVC = segue.destination as? LogInViewController else { return }
+        guard let userName = userNameTF.text else { return }
+        logInVC.userName = userName
+    }
+    
     //MARK: - IBActions
     @IBAction func logInButtonTapped() {
         
