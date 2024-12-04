@@ -8,26 +8,25 @@
 import UIKit
 
 class LogInViewController: UIViewController {
-    
+    //MARK: - IBOuntlets
     @IBOutlet var welcomeMessageLabel: UILabel!
     @IBOutlet var helloLabel: UILabel!
     
+    //MARK: - Propherties
     var userName: String!
     
+    //MARK: - Override methods
     override func viewDidLoad() {
         super.viewDidLoad()
         
         welcomeMessageLabel.text = "Welcome \(userName ?? "")"
         helloLabel.text = "👋"
         setGradienBackgraund()
-
-
     }
 
-
+    //MARK: - Private methods
     private func setGradienBackgraund() {
         let gradientLayer = CAGradientLayer()
-        
         gradientLayer.colors = [UIColor.blue.cgColor, UIColor.red.cgColor]
         gradientLayer.locations = [0.3, 0.7, 0.8]
         gradientLayer.startPoint = CGPoint(x: 0.0, y: 0.0)

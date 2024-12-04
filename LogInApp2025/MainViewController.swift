@@ -17,14 +17,27 @@ class MainViewController: UIViewController {
     private let userPassword = "Password"
     
     //MARK: - Override methods
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        let tapGesture = UITapGestureRecognizer(
+            target: self,
+            action: #selector(UIInputViewController.dismissKeyboard))
+        
+            view.addGestureRecognizer(tapGesture)
+    }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let logInVC = segue.destination as? LogInViewController else { return }
         guard let userName = userNameTF.text else { return }
         logInVC.userName = userName
     }
+    //MARK: - OBJC Methods
+    @objc func dismissKeyboard() {
+            // Скрыть клавиатуру
+            view.endEditing(true)
+        }
     
     //MARK: - IBActions
-    
     @IBAction func unwine(for segue: UIStoryboardSegue) {
         userNameTF.text = ""
         userPasswordTF.text = ""
@@ -37,7 +50,10 @@ class MainViewController: UIViewController {
         if user == userName, userPassword == pasword {
             performSegue(withIdentifier: "segueToLogInVC", sender: nil)
         } else {
-            showAlert(title: "Invalid login or password", message: "Please, enter correct login and password")
+            showAlert(
+                title: "Invalid login or password",
+                message: "Please, enter correct login and password"
+            )
         }
     }
     
@@ -53,7 +69,11 @@ class MainViewController: UIViewController {
     // MARK: - Extantions
 extension MainViewController {
     private func showAlert(title: String, message: String) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let alert = UIAlertController(
+            title: title,
+            message: message, preferredStyle: .alert
+        )
+        
         alert.addAction(UIAlertAction(title: "OK", style: .default) { _ in
             self.userPasswordTF.text = ""
             }
