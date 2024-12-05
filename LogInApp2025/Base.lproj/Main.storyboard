@@ -52,16 +52,16 @@
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="Fogot User Name?"/>
                                                 <connections>
-                                                    <action selector="fogotUserNameButtonTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="Mht-Xo-HcY"/>
+                                                    <action selector="forgotRegisterData:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OIY-Hh-Jt3"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cBv-jU-jF4">
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cBv-jU-jF4">
                                                 <rect key="frame" x="191" y="0.0" width="104" height="28"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="Fogot Password?"/>
                                                 <connections>
-                                                    <action selector="fogotPasswordButtonTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="eyt-yR-qhy"/>
+                                                    <action selector="forgotRegisterData:" destination="BYZ-38-t0r" eventType="touchUpInside" id="T1B-YD-1ye"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -80,7 +80,7 @@
                     <connections>
                         <outlet property="userNameTF" destination="nmI-F2-nLQ" id="AkY-7k-59n"/>
                         <outlet property="userPasswordTF" destination="w4Q-CV-Yz6" id="uxz-fA-EDx"/>
-                        <segue destination="oOq-6b-ya3" kind="show" identifier="openLogInVC" id="cAH-mt-7SU"/>
+                        <segue destination="oOq-6b-ya3" kind="presentation" identifier="openLogInVC" modalPresentationStyle="fullScreen" id="cAH-mt-7SU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -92,7 +92,7 @@
             <objects>
                 <viewController id="oOq-6b-ya3" customClass="LogInViewController" customModule="LogInApp2025" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UWN-Xk-8Ue">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="7IM-5w-XGO">
@@ -113,8 +113,8 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hand" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KDl-7I-nXM">
-                                        <rect key="frame" x="116.5" y="94.5" width="110.5" height="57.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="👋" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KDl-7I-nXM">
+                                        <rect key="frame" x="145.5" y="94.5" width="52" height="57.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="48"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -122,12 +122,12 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7ID-Av-CQ2">
-                                <rect key="frame" x="140" y="484" width="95" height="39"/>
+                                <rect key="frame" x="140" y="504" width="95" height="39"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Log out"/>
                                 <connections>
-                                    <segue destination="gTq-aN-ghD" kind="unwind" unwindAction="unwineFor:" id="VJw-ug-XUh"/>
+                                    <segue destination="gTq-aN-ghD" kind="unwind" unwindAction="unwinedFor:" id="FBN-gc-yY6"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -144,7 +144,6 @@
                     </view>
                     <navigationItem key="navigationItem" id="Og9-6Q-ZT3"/>
                     <connections>
-                        <outlet property="helloLabel" destination="KDl-7I-nXM" id="No4-9x-Eeq"/>
                         <outlet property="welcomeMessageLabel" destination="fuh-Be-G5R" id="mID-Ia-0t9"/>
                     </connections>
                 </viewController>

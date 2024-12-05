@@ -14,7 +14,7 @@ class MainViewController: UIViewController {
     
     //MARK: - Private properties
     private let userName = "1"
-    private let userPassword = "1"
+    private let userPassword = "2"
     
     //MARK: - Override methods
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -28,7 +28,6 @@ class MainViewController: UIViewController {
     }
     
     //MARK: - IBActions
-
     @IBAction func logInButtonTapped() {
         guard userNameTF.text == userName, userPasswordTF.text == userPassword else {
             showAlert(
@@ -39,18 +38,15 @@ class MainViewController: UIViewController {
         }
         performSegue(withIdentifier: "openLogInVC", sender: nil)
     }
- 
-    @IBAction func unwine(for segue: UIStoryboardSegue) {
+    @IBAction func forgotRegisterData(_ sender: UIButton) {
+        sender.tag == 0
+        ? showAlert(title: "Oops!", message: "Your name is \(userName) 😉")
+        : showAlert(title: "Oops!", message: "Your name is \(userPassword) 😉")
+    }
+    
+    @IBAction func unwined(for segue: UIStoryboardSegue) {
         userNameTF.text = ""
         userPasswordTF.text = ""
-    }
-    
-    @IBAction func fogotUserNameButtonTapped() {
-        showAlert(title: "Oops!", message: "Your name is \(userName) 😉")
-    }
-    
-    @IBAction func fogotPasswordButtonTapped() {
-        showAlert(title: "Oops!", message: "Your name is \(userPassword) 😉")
     }
 }
 
@@ -61,11 +57,12 @@ class MainViewController: UIViewController {
             title: title,
             message: message, preferredStyle: .alert
         )
-        
-        alert.addAction(UIAlertAction(title: "OK", style: .default) { _ in
+            
+        let okAction = UIAlertAction(title: "OK", style: .default) { _ in
             self.userPasswordTF.text = ""
-            }
-        )
+        }
+            
+        alert.addAction(okAction)
         present(alert, animated: true)
     }
 }
