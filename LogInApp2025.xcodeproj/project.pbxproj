@@ -7,25 +7,12 @@
 	objects = {
 
 /* Begin PBXFileReference section */
-		5A3A50732D00779F007C84AF /* LogInApp2025.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LogInApp2025.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A3A50732D00779F007C84AF /* LogInApp2025.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = LogInApp2025.app; path = "/Users/yurii/Documents/Swift/LogInApp2025/build/Debug-iphoneos/LogInApp2025.app"; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
-
-/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		5A3A50852D0077A0007C84AF /* Exceptions for "LogInApp2025" folder in "LogInApp2025" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Info.plist,
-			);
-			target = 5A3A50722D00779F007C84AF /* LogInApp2025 */;
-		};
-/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		5A3A50752D00779F007C84AF /* LogInApp2025 */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				5A3A50852D0077A0007C84AF /* Exceptions for "LogInApp2025" folder in "LogInApp2025" target */,
-			);
 			path = LogInApp2025;
 			sourceTree = "<group>";
 		};
@@ -46,16 +33,7 @@
 			isa = PBXGroup;
 			children = (
 				5A3A50752D00779F007C84AF /* LogInApp2025 */,
-				5A3A50742D00779F007C84AF /* Products */,
 			);
-			sourceTree = "<group>";
-		};
-		5A3A50742D00779F007C84AF /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				5A3A50732D00779F007C84AF /* LogInApp2025.app */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -108,7 +86,7 @@
 			mainGroup = 5A3A506A2D00779E007C84AF;
 			minimizedProjectReferenceProxies = 1;
 			preferredProjectObjectVersion = 77;
-			productRefGroup = 5A3A50742D00779F007C84AF /* Products */;
+			productRefGroup = 5A3A506A2D00779E007C84AF;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
