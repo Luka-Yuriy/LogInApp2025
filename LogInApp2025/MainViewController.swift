@@ -13,48 +13,36 @@ class MainViewController: UIViewController {
     @IBOutlet var userPasswordTF: UITextField!
     
     //MARK: - Private properties
-    private let userName = "User"
-    private let userPassword = "Password"
+    private let userName = "1"
+    private let userPassword = "1"
     
     //MARK: - Override methods
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        let tapGesture = UITapGestureRecognizer(
-            target: self,
-            action: #selector(UIInputViewController.dismissKeyboard))
-        
-            view.addGestureRecognizer(tapGesture)
-    }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let logInVC = segue.destination as? LogInViewController else { return }
-        guard let userName = userNameTF.text else { return }
         logInVC.userName = userName
     }
-    //MARK: - OBJC Methods
-    @objc func dismissKeyboard() {
-            // Скрыть клавиатуру
-            view.endEditing(true)
-        }
     
-    //MARK: - IBActions
-    @IBAction func unwine(for segue: UIStoryboardSegue) {
-        userNameTF.text = ""
-        userPasswordTF.text = ""
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        view.endEditing(true)
     }
     
+    //MARK: - IBActions
+
     @IBAction func logInButtonTapped() {
-        guard let user = userNameTF.text else { return }
-        guard let pasword = userPasswordTF.text else { return }
-        
-        if user == userName, userPassword == pasword {
-            performSegue(withIdentifier: "segueToLogInVC", sender: nil)
-        } else {
+        guard userNameTF.text == userName, userPasswordTF.text == userPassword else {
             showAlert(
                 title: "Invalid login or password",
                 message: "Please, enter correct login and password"
             )
+            return
         }
+        performSegue(withIdentifier: "openLogInVC", sender: nil)
+    }
+ 
+    @IBAction func unwine(for segue: UIStoryboardSegue) {
+        userNameTF.text = ""
+        userPasswordTF.text = ""
     }
     
     @IBAction func fogotUserNameButtonTapped() {
@@ -67,8 +55,8 @@ class MainViewController: UIViewController {
 }
 
     // MARK: - Extantions
-extension MainViewController {
-    private func showAlert(title: String, message: String) {
+    extension MainViewController {
+        private func showAlert(title: String, message: String) {
         let alert = UIAlertController(
             title: title,
             message: message, preferredStyle: .alert
